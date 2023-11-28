@@ -103,6 +103,8 @@ MonoBehaviour:
   speed: 3
   maxHealth: 5
   projectilePrefab: {fileID: 2186515457446950709, guid: 8bc470661feb6f54da6c61289a44908f, type: 3}
+  damagePrefab: {fileID: 1515967447061239731, guid: b224c4421f5e31e469ae0addd107ec4e, type: 3}
+  healthfxPrefab: {fileID: 7728477805462207746, guid: 6a786232c2f0bc4489ca17aa5fea893b, type: 3}
   throwSound: {fileID: 8300000, guid: b2edfd40873655249ba0e01a5cf705be, type: 3}
   hitSound: {fileID: 8300000, guid: 9b1bb1f450b7d444fa4a8019d13519a7, type: 3}
   timeInvincible: 2

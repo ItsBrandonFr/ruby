@@ -10,6 +10,10 @@ public class RubyController : MonoBehaviour
     
     public GameObject projectilePrefab;
     
+    public ParticleSystem damageEffect;
+
+    public ParticleSystem healthEffect;
+
     public AudioClip throwSound;
     public AudioClip hitSound;
     
@@ -102,10 +106,16 @@ public class RubyController : MonoBehaviour
             
             isInvincible = true;
             invincibleTimer = timeInvincible;
-            
+
             PlaySound(hitSound);
+            explosion();
         }
         
+        if (amount > 0)
+        {
+            healing();
+        }
+
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
@@ -126,6 +136,16 @@ public class RubyController : MonoBehaviour
     public void PlaySound(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
+    }
+
+    void explosion()
+    {
+        ParticleSystem instatiatedParticleSystem = Instantiate(damageEffect, transform.position, Quaternion.identity);
+    }
+
+    void healing()
+    {
+        ParticleSystem instatiatedParticleSystem = Instantiate(healthEffect, transform.position, Quaternion.identity);
     }
 }
 
